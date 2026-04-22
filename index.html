@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitReflex // Daily Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="A minimal, high-impact daily habit tracker.">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="logo-section">
+                <h1>Daily Routine</h1>
+                <p id="current-full-date">Tuesday, October 24, 2023</p>
+            </div>
+            
+            <div style="display: flex; gap: 12px;">
+                <button style="background: white; border: 1px solid #d1d5db; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; color: #374151;">Settings</button>
+                <button style="background: #4f46e5; border: none; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer;" onclick="document.getElementById('habit-input').focus()">New Habit</button>
+            </div>
+
+            <div class="date-section" style="display: none;">
+                <div class="oversized-number" id="current-day">--</div>
+                <div class="month-year" id="current-month-year">--- ----</div>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Current Streak</div>
+                <div class="stat-value" id="stat-streak">0 Days</div>
+                <div class="stat-sub">Focus on today</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Completion Rate</div>
+                <div class="stat-value" id="stat-rate">0%</div>
+                <div class="stat-sub">Keep it up</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Habits</div>
+                <div class="stat-value" id="stat-total">0</div>
+                <div class="stat-sub">Tracked items</div>
+            </div>
+        </section>
+
+        <div class="main-card">
+            <section class="add-habit-container">
+                <form class="habit-form" id="habit-form">
+                    <input 
+                        type="text" 
+                        id="habit-input" 
+                        placeholder="Click to add a new daily task..." 
+                        autocomplete="off"
+                        required
+                    >
+                    <button type="submit" class="add-btn">START</button>
+                </form>
+            </section>
+
+            <section class="habits-grid" id="habits-grid">
+                <!-- Habits dynamic list -->
+                <div class="empty-state">
+                    <p>Loading your intent...</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
